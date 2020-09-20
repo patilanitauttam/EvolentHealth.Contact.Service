@@ -8,17 +8,28 @@ namespace EvolentHealth.Contact.Service
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+        private readonly string corspolicy = "CorsPolicy";
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext(_configuration)
+                    .AddServices();
+            services.AddAutoMapper();
+
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(corspolicy,
+                    builder => builder
+                    .SetIsOriginAllowed((host) => true));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +50,7 @@ namespace EvolentHealth.Contact.Service
             {
                 endpoints.MapControllers();
             });
+            app.UseCors(corspolicy);
         }
     }
 }

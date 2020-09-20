@@ -1,0 +1,5 @@
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Common\bin\Debug\netstandard2.0\EvolentHealth.Contact.Common.deps.json
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Common\bin\Debug\netstandard2.0\EvolentHealth.Contact.Common.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Common\obj\Debug\netstandard2.0\EvolentHealth.Contact.Common.csprojAssemblyReference.cache
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Common\obj\Debug\netstandard2.0\EvolentHealth.Contact.Common.AssemblyInfoInputs.cache
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Common\obj\Debug\netstandard2.0\EvolentHealth.Contact.Common.AssemblyInfo.cs

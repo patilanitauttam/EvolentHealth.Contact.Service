@@ -1,0 +1,5 @@
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.DataAccess\bin\Debug\netstandard2.0\EvolentHealth.Contact.DataAccess.deps.json
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.DataAccess\bin\Debug\netstandard2.0\EvolentHealth.Contact.DataAccess.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.DataAccess\obj\Debug\netstandard2.0\EvolentHealth.Contact.DataAccess.csprojAssemblyReference.cache
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.DataAccess\obj\Debug\netstandard2.0\EvolentHealth.Contact.DataAccess.AssemblyInfoInputs.cache
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.DataAccess\obj\Debug\netstandard2.0\EvolentHealth.Contact.DataAccess.AssemblyInfo.cs
