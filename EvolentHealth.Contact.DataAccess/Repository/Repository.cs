@@ -1,7 +1,7 @@
 ﻿using EvolentHealth.Contact.DataAccess.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -10,53 +10,37 @@ namespace EvolentHealth.Contact.DataAccess.Repository
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ContactDBContext _contactDBContext;
+        private DbSet<T> _entities;
+
         public Repository(ContactDBContext contactDBContext)
         {
             _contactDBContext = contactDBContext;
+            _entities = _contactDBContext.Set<T>();
         }
-        public async Task<int> Add(T model)
+        public async Task Add(T model)
         {
-            dynamic entity = model;
-            entity.CreatedDate = DateTime.UtcNow;
-
-            await _contactDBContext.AddAsync(model);
+            await _entities.AddAsync(model);
             await _contactDBContext.SaveChangesAsync(true);
-            return entity.Id;
         }
-        public async Task<int> Update(T model)
+        public async Task Update(T model)
         {
-            dynamic entity = (dynamic)model;
-            entity.ModifiedDate = DateTime.UtcNow;
-
-            _contactDBContext.Update(model);
+            _entities.Update(model);
             await _contactDBContext.SaveChangesAsync();
-            return entity.Id;
         }
-        public T GetById(int id)
+        public async Task<T> Get<T>(Expression<Func<T, bool>> predicate)
+     where T : class
         {
-            return _contactDBContext.Set<T>().Find(id);
+            return await _contactDBContext.Set<T>().FirstOrDefaultAsync(predicate); 
         }
-        public async Task<int> Delete(T model)
-        {
-            dynamic entity = (dynamic)model;
-            entity.Status = false;
-            entity.ModifiedDate = DateTime.UtcNow;
 
-            _contactDBContext.Update(model);
+        public async Task Delete(T model)
+        {
+            _entities.Remove(model);
             await _contactDBContext.SaveChangesAsync();
-            return entity.Id;
         }
-        List<T> Get(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
+        public async Task<List<T>> Gets()
         {
-            IQueryable<T> query = _contactDBContext.Set<T>();
-
-            if (!(filter is null))
-                query = query.Where(filter);
-
-            if (!(orderBy is null))
-                query = orderBy(query);
-
-            return query.ToList();
+            return await _contactDBContext.Set<T>().ToListAsync();
         }
     }
 }

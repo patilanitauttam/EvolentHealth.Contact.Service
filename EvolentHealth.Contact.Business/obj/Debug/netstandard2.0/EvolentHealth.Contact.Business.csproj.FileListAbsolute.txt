@@ -1,0 +1,13 @@
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\obj\Debug\netstandard2.0\EvolentHealth.Contact.Business.csprojAssemblyReference.cache
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\obj\Debug\netstandard2.0\EvolentHealth.Contact.Business.AssemblyInfoInputs.cache
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\obj\Debug\netstandard2.0\EvolentHealth.Contact.Business.AssemblyInfo.cs
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\bin\Debug\netstandard2.0\EvolentHealth.Contact.Business.deps.json
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\bin\Debug\netstandard2.0\EvolentHealth.Contact.Business.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\bin\Debug\netstandard2.0\EvolentHealth.Contact.Business.pdb
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\bin\Debug\netstandard2.0\EvolentHealth.Contact.Common.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\bin\Debug\netstandard2.0\EvolentHealth.Contact.DataAccess.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\bin\Debug\netstandard2.0\EvolentHealth.Contact.Common.pdb
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\bin\Debug\netstandard2.0\EvolentHealth.Contact.DataAccess.pdb
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\obj\Debug\netstandard2.0\EvolentHealth.Contact.Business.csproj.CopyComplete
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\obj\Debug\netstandard2.0\EvolentHealth.Contact.Business.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Business\obj\Debug\netstandard2.0\EvolentHealth.Contact.Business.pdb

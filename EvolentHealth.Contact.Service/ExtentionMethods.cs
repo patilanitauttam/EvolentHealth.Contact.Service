@@ -17,7 +17,6 @@ namespace EvolentHealth.Contact.Service
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IContactManager, ContactManager>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             return services;

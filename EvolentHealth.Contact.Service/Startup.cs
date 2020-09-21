@@ -18,18 +18,23 @@ namespace EvolentHealth.Contact.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(corspolicy,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
             services.AddControllers();
             services.AddDbContext(_configuration)
                     .AddServices();
             services.AddAutoMapper();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
 
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(corspolicy,
-                    builder => builder
-                    .SetIsOriginAllowed((host) => true));
-            });
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,18 +44,8 @@ namespace EvolentHealth.Contact.Service
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
             app.UseCors(corspolicy);
+            app.UseMvc();
         }
     }
 }

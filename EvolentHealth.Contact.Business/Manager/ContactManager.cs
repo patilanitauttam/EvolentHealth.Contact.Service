@@ -3,6 +3,8 @@ using EvolentHealth.Contact.Business.Interface;
 using EvolentHealth.Contact.Common.Model;
 using EvolentHealth.Contact.DataAccess.Entities;
 using EvolentHealth.Contact.DataAccess.Interface;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace EvolentHealth.Contact.Business.Manager
@@ -17,31 +19,40 @@ namespace EvolentHealth.Contact.Business.Manager
             _mapper = mapper;
         }
        
-        public async Task<int> SaveContact(ContactModel contactModel)
+        public async Task SaveContact(ContactModel contactModel)
         {
             Contacts contact = _mapper.Map<Contacts>(contactModel);
+            contact.CreatedDate = DateTime.UtcNow;
+            contact.ModifiedDate = DateTime.UtcNow;
             if (contactModel.ContactId > 0)
             {
-               return await _contactRepository.Update(contact);
+                await _contactRepository.Update(contact);
             }
             else
             {
-                return await _contactRepository.Add(contact);
+                await _contactRepository.Add(contact);
             }
         }
 
-        public ContactModel GetContact(int contactId)
+        public async Task<ContactModel> GetContact(int contactId)
         {
-            return _mapper.Map<ContactModel>(_contactRepository.GetById(contactId));
+            var contact = await _contactRepository.Get<Contacts>(x=>x.ContactId == contactId);
+            return _mapper.Map<ContactModel>(contact);
         }
 
-        public async Task<int> DeleteContact(int contactId)
+        public async Task<List<ContactModel>> GetContacts()
         {
-            Contacts contact = _contactRepository.GetById(contactId);
-            return await _contactRepository.Delete(contact);
+            var contact = await _contactRepository.Gets();
+            return _mapper.Map<List<ContactModel>>(contact);
         }
 
-
-
+        public async Task DeleteContact(int contactId)
+        {
+            Contacts contact = await _contactRepository.Get<Contacts>(x => x.ContactId == contactId);
+            if (!(contact is null))
+            {
+                await _contactRepository.Delete(contact);
+            }
+        }
     }
 }

@@ -1,12 +1,17 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace EvolentHealth.Contact.DataAccess.Interface
 {
     public interface IRepository<T> where T : class
     {
-        T GetById(int id);
-        Task<int> Add(T entity);
-        Task<int> Update(T entity);
-        Task<int> Delete(T entity);
+        Task<T> Get<T>(Expression<Func<T, bool>> predicate)
+     where T : class;
+        Task Add(T entity);
+        Task Update(T entity);
+        Task Delete(T entity);
+        Task<List<T>> Gets();
     }
 }

@@ -9,6 +9,7 @@ namespace EvolentHealth.Contact.Service.Controllers
 {
     [Route("api/contact")]
     [ApiController]
+
     public class ContactController : ControllerBase
     {
         private readonly IContactManager _contactManager;
@@ -28,7 +29,7 @@ namespace EvolentHealth.Contact.Service.Controllers
                 }
                 
                 await _contactManager.SaveContact(contactModel);
-                return Ok(contactModel.ContactId > 0 ? SuccessOrErrorMessage.CONTACT_UPDATION_SUCCESS : SuccessOrErrorMessage.CONTACT_CREATEION_SUCCESS);
+                return Ok(new { successMessage = contactModel.ContactId > 0 ? SuccessOrErrorMessage.CONTACT_UPDATION_SUCCESS : SuccessOrErrorMessage.CONTACT_CREATEION_SUCCESS });
             }
             catch (Exception ex)
             {
@@ -36,24 +37,37 @@ namespace EvolentHealth.Contact.Service.Controllers
             }
         }
 
-        [HttpGet("Contact/{contactId}")]
-        public IActionResult GetContact([FromQuery] int contactId)
+        [HttpGet("Contact/{contactId:int}")]
+        public async Task<IActionResult> GetContact(int contactId)
         {
             try
             {
-                return Ok(_contactManager.GetContact(contactId));
+                return Ok(await _contactManager.GetContact(contactId));
             }
             catch (Exception ex)
             {
                 return BadRequest(ex);
             }
         }
-        [HttpDelete("Contact/{contactId}")]
-        public IActionResult DeleteContact([FromQuery] int contactId)
+        [HttpGet("Contacts")]
+        public async Task<IActionResult> GetContacts()
         {
             try
             {
-                return Ok(_contactManager.DeleteContact(contactId));
+                return Ok(await _contactManager.GetContacts());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+        [HttpDelete("Contact/{contactId:int}")]
+        public async Task<IActionResult> DeleteContact(int contactId)
+        {
+            try
+            {
+                await _contactManager.DeleteContact(contactId);
+                return Ok(new { successMessage = SuccessOrErrorMessage.CONTACT_DELETION_SUCCESS });
             }
             catch (Exception ex)
             {

@@ -128,3 +128,10 @@ C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.C
 C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\obj\Debug\netcoreapp3.1\EvolentHealth.Contact.Service.MvcApplicationPartsAssemblyInfo.cache
 C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\obj\Debug\netcoreapp3.1\EvolentHealth.Contact.Service.dll
 C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\obj\Debug\netcoreapp3.1\EvolentHealth.Contact.Service.pdb
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\bin\Debug\netcoreapp3.1\EvolentHealth.Contact.Business.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\bin\Debug\netcoreapp3.1\EvolentHealth.Contact.Common.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\bin\Debug\netcoreapp3.1\EvolentHealth.Contact.DataAccess.dll
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\bin\Debug\netcoreapp3.1\EvolentHealth.Contact.Business.pdb
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\bin\Debug\netcoreapp3.1\EvolentHealth.Contact.Common.pdb
+C:\MyWorkspace\Anita\EvolentHealth\EvolentHealth.Contact.Service\EvolentHealth.Contact.Service\bin\Debug\netcoreapp3.1\EvolentHealth.Contact.DataAccess.pdb

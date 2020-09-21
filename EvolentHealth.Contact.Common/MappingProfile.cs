@@ -11,7 +11,8 @@ namespace EvolentHealth.Contact.Common
             CreateMap<Contacts, ContactModel>()
                  .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.CreatedBy))
                  .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.ModifiedBy))
-                 .ReverseMap();
+                .ForMember(dest => dest.PrimaryEmail, opt => opt.MapFrom(src => src.Email))
+                .ReverseMap();
         }
     }
 }

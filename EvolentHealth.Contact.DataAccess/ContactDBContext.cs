@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EvolentHealth.Contact.DataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EvolentHealth.Contact.DataAccess
 {
@@ -22,12 +23,12 @@ namespace EvolentHealth.Contact.DataAccess
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>(entity =>
+            modelBuilder.Entity<Contacts>(entity =>
             {
-                entity.HasKey(e => e.UserId)
-                     .HasName("PK__Users__UserId");
+                entity.HasKey(e => e.ContactId)
+                     .HasName("PK__Contacts__ContactId");
 
-                entity.ToTable("Users", "user");
+                entity.ToTable("Contacts", "contact");
             });
         }
     }
